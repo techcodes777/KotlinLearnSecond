@@ -1,0 +1,338 @@
+/**
+ * You can edit, run, and share this code.
+ * play.kotlinlang.org
+ */
+fun main() {	
+    println("Hello, world!!!")
+    
+    var ab = 10
+    ab += 5
+    println("Add Number : " + ab)
+    var user : String = "Anuj"
+    val num : Int = 50
+    
+    var nums = 100
+    val lname = "Virani"
+    
+    println(user)
+    println("Name : ${lname.uppercase()}")
+    
+    println(num)
+    println(user)
+    
+   val age = 19
+   if(age == 19){
+       println("You can easily vote")
+   }else{
+       println("You can't easily vote")
+   }
+   
+   var name : String? = null
+    if(name != null){
+        println(name)
+    }
+    
+    val values : Int = if(true){
+       println("Inside true") 
+       10 
+    }else{
+        println("Inside false")
+        20
+    }
+    
+    println(values)
+    var name1 = "token"
+    val number : String? = if(name1 == "token"){
+        "Token is alresdy exits"
+    }else{
+        "Token is not get"
+    }
+    println(number)
+    
+    val firstName = "Jemis"
+    //Normal when keyword //Normal when statement
+    when(name){
+        "Jemis"->{
+            println("Jemis")
+        }
+        "Dhoni"->{
+                println("Dhoni")
+        }else ->{
+            "Nothing"
+        }
+    }
+    
+    val userAllNames = "Jemiss"
+    val userNames = when(userAllNames){
+        "Jemis" ->{
+            print("Jemis is a best developer")
+        }
+        "Dhoni" ->{
+            print("Dhoni is a best player")
+        }else->{
+            print("Nothing")
+        }
+    }
+    println(userNames)
+    
+    val allNumber = 55
+    val num1 = when(allNumber){
+        20 ->{
+           "Inserted 20"
+        }
+        50 ->{
+            "Inserted 50"
+        }
+        in 51..60 ->{
+            "Inserted 51 to 60"
+        }
+        else ->{
+            "Not inserted"
+        }
+    }
+    println(num1)
+    
+    val arr = arrayOf("Rupesh","Jemis","Anuj")
+    
+    for(arrs in arr){
+        println(arrs)
+    }
+   println("")
+   println("----------------------")
+   arr.forEach{
+       println(it)
+   }
+   
+   //To Create read only list
+   val readOnlyShape = listOf("triangle","square","circle")
+   println(readOnlyShape)
+   println(readOnlyShape.indexOf("circle"))
+   println(readOnlyShape.contains("Hello"))
+   // readOnlyShape.add //can't add
+   // readOnlyShape[0] = "Triangle"
+   
+   
+   //Mutable list witf explicite type declaration
+   val shape : MutableList<String> = mutableListOf("triangle","square","circle")
+   println(shape)
+  
+   //ImmutableList
+   val listNumber = listOf(1,2,3)
+   println(listNumber)
+   //listNumber.add //can't add
+   //listNumber[0] = 2
+   println("--------------------")
+   println("ImutableList")
+   
+   
+   //Mutable List //MutableList with explicit type declaration
+   val listMutable : MutableList<Int> = mutableListOf(1,2,3)
+   println(listMutable.indexOf(3))  //Find index from element
+   println(listMutable.contains(4)) //Element exit kare che //Find exit element 
+   listMutable.add(4)
+   listMutable.remove(1) //Remove element 
+   println(listMutable)
+   
+   val list2 = listOf(15,27) //ek list ne apne bija list ma merge pan kari shakavi shavi 
+   listMutable.addAll(list2)
+   println(listMutable)
+   
+   
+   //This is mutablemap
+   val students = mutableMapOf<Int,String>()
+   students.put(1,"Krishna")
+   students.put(2,"Mahadev")
+   students.put(3,"Jemis")
+   
+   println(students.get(1))
+   println(students.get(2))
+   println(students.get(3))
+   
+   for((key,value) in students){
+       println("$key = $value")
+   }
+  
+   students[4] = "Good Moorning"
+   println(students[1])
+   println(students[2])
+   println(students[3])
+   println(students[4])
+   
+   //This is immutablemap
+   val map = mapOf<Int,String>(1 to "Hello",2 to "World")
+   println(map)
+   
+   //ImmutablrList
+   val listDatas = listOf(5,6,7)
+   println(listDatas)
+   
+   //MutableList
+   val listMutableData : MutableList<Int> = mutableListOf(8,9,10)
+   println(listMutableData)
+   listMutableData.addAll(list2)
+   println(listMutableData)
+   
+   for(i in 1..3){ //Upperbound include (In Operator)
+       println(i)
+   }
+   
+   for(i in 0 until 5){
+       println("Until Loop $i")
+   }
+   
+   for(i in 1..5 step 2){
+       println(i)
+   }
+   
+   for(i in 10 downTo 0){
+       println(i)
+   }
+   
+   val u = 2
+   if(u in 1..5){
+       println("u is in range from 1 to 5")
+   } 
+   if(u !in 6..10){
+       println("u is not in range from 6 to 10")
+   }
+   
+//    val nameMutable = mutableListOf<String>("Hello","Good Moorning",2)
+//    println(nameMutable) //Not allow integer value in type declaration 
+   
+   val nameMList = mutableListOf<String>("Hello World,Good Moorning")
+   nameMList[0] = "How are you?"
+   println(nameMList)
+  
+   //This is a normal function
+   println(operation(10,17))
+   
+   //Functional Programming Language
+   println(twoSum(15,15))
+   
+//    greetings("Good Moorning")
+      greetings("Good Moorning")
+      
+      greetingsData(name = "Jemis",greet = "Good Night")
+      
+      //Third parametr is lambda function //Highr Order Function
+      val output = opearation(4, 5, { a, b ->
+          print("Adding these two number ")
+          val temp = a*a
+          temp + b
+      })
+      
+      println(output)
+      
+      val p1 = Person()
+      println(p1)
+      
+      val s1 = Student("Jemis")
+      println(s1.name)
+      
+      val c1 = Car("BMW")
+      println(c1.carName)
+      
+      val m1 = Manager("Vipul")
+      println(m1.name)
+      
+      val users = User("Modi",1)
+      println(users)
+      
+      val secondUser = User("Amit",2)
+      println(secondUser)
+      
+      val thirdUser = User("Yogi",3)
+      println(thirdUser)
+      
+//       println("user == secondUser: ${user == secondUser}")
+      println(users.hashCode())
+      println(secondUser.hashCode())
+      println(thirdUser.copy())
+      println(thirdUser.copy("Max"))
+      println(thirdUser.copy("What a great victory",id = 4))
+      
+      println("name = ${users.component1()}")
+      println("id = ${users.component2()}")
+     
+      var valueData = studentData(5,15,{ a,b->
+          println("My work is good")
+          val temp = a + b
+          temp * a
+      })
+      println(valueData)
+      
+      val listAllData = listOf(1,2,3,4,5,6,7,8) //anu type ni list che 
+      
+      val listFilterData = listOf<Int>(1,2,3,4,5,6,7,8)
+      listFilterData.filter({ //it -> aa rite pan chale
+          it % 2 == 0 //find even number  //filter basically integer input leshe and return boolean karshe 
+      }).map({
+          it * it
+      })
+        .forEach({
+          println("$it") //Print every element from foreachloop
+      })
+        
+        
+      val userName1 : String? = "Good Evening"
+      userName1?.let{
+//           it //variable acces from it 
+          println(userName1)
+          println(it.length)
+      }
+      
+      userName1?.run{
+          println("Hello $userName1")
+          println(length) //Variable access from direct(this kahveay) //it. no use karvani jarur nathi
+          println(userName1.isEmpty())
+      }
+      
+      val numberData = listOf(1,2,3)
+      println("Max = ${numberData.max()}")
+      println("Min = ${numberData.min()}")
+}
+
+//Normal function
+fun operation(a : Int , b : Int) : Int {
+    return a + b;
+}
+
+//Functional programing benifit //tame function ne as a variable use kari shako chavo 
+fun twoSum(a : Int,b : Int) : Int = a + b
+
+fun greetings(greet : String = "Good Night") {
+    println("Hello $greet")
+}
+
+fun greetingsData(greet : String = "Good Moorning", name : String) {
+    println("HelloWolrd $greet $name")
+}
+
+fun opearation(a : Int,b : Int, opearates : (Int,Int) -> Int) : Int {
+    return opearates(a,b)
+}
+
+
+class Person 
+
+class Student constructor(_name : String){ //With Constructer KeyWord
+    val name : String
+    init{
+        name = _name
+    }
+}
+
+class Car(name : String){ //Without constructer creaee constructer
+    val carName : String
+    init{
+        carName = name
+    }
+}
+
+fun studentData(a : Int, b : Int, allData : (Int,Int) -> Int) : Int{
+    return allData(a,b)
+}
+
+class Manager(val name : String)
+
+data class User(val name : String ,val id : Int)
